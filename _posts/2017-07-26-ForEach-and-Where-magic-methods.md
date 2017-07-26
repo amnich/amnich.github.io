@@ -1,8 +1,9 @@
- [http://www.powershellmagazine.com/2014/10/22/foreach-and-where-magic-methods/](http://www.powershellmagazine.com/2014/10/22/foreach-and-where-magic-methods/)
+http://www.powershellmagazine.com/2014/10/22/foreach-and-where-magic-methods/
 
- A great article about foeach and where methods which where introduced in PowerShell 4.0 and in my opinion are not well known.
+A great article about foeach and where methods which where introduced in PowerShell 4.0 and in my opinion are not well known.
  
- I encourage you to read it and take advantage of the improvements in performance, functionality and syntax!
+ I encourage you to read it and take advantage of the improvements in performance, functionality and syntax ... or just read it and maybe get back to it when you have some performance issues.
+ 
  
  Just a quick peek.
  
