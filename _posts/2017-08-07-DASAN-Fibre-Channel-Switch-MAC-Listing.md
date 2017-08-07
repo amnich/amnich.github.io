@@ -23,7 +23,7 @@ Where **102** is the VLAN number and the following **1** is the port number on s
 ## REGEX
 We need a regex for that to gather the parts we need:
 
-```regex
+```
 3\.13\.1\.1\.3\.(?<VLAN>\d{1,3})\.(?<Port>\d{1,3}).*= Hex-STRING: (?<MAC>.*)
 ```
 ## FUNCTION
