@@ -1,3 +1,9 @@
+---
+title: "Get-ADUser -Properties * ends with error"
+date: 2017-08-07
+tags: [PowerShell,Get-AdUser,CryptographicException]
+---
+
 Get-ADUser -Filter * -Properties * breaks with an error
 ```powershell
 PS > Get-ADUser -Filter * -Properties *
