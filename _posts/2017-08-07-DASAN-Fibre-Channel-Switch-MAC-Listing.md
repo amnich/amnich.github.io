@@ -1,5 +1,5 @@
 ---
-title: "DASAN Fibre Channel Switch MAClisting"
+title: "DASAN Fibre Channel Switch MAC listing"
 date: 2017-08-07
 tags: [PowerShell,MAC,DASAN]
 ---
