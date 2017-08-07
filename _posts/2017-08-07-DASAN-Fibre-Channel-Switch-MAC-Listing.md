@@ -32,7 +32,8 @@ In the end we wrap it up into a function
 function Get-MACDasan {
     [CmdletBinding()]
     param(	
-        [Parameter(Mandatory = $True)] [ValidateNotNull()]
+        [Parameter(Mandatory = $True)] 
+        [ValidateScript({$_ -match [IPAddress]$_ })] 
         [string]$Ip,
         [Parameter(Mandatory = $True)] [ValidateNotNull()]
         [string]$Comunity,
