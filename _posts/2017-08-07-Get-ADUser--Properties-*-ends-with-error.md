@@ -57,9 +57,9 @@ User1
     Certificates
 ```
 
-Now we know we have an issue with the property certificate that is mapped to the userCertificate attribute in AD.
+Now we know we have an issue with the property **certificates** that is mapped to the **userCertificate** attribute in AD.
 
 Correct, delete or whatever you have to do with that corrupted certificate.
 
-
+[Source Code](https://gist.github.com/amnich/5e2ae590f3a7a65d0ac8899273557f9d#file-test-aduserproperties-ps1)
 
