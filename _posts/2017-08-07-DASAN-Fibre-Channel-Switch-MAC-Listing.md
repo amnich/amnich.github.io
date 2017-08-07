@@ -36,11 +36,11 @@ function Get-MACDasan {
         [ValidateScript({$_ -match [IPAddress]$_ })] 
         [string]$Ip,
         [Parameter(Mandatory = $True)] [ValidateNotNull()]
-        [string]$Comunity,
+        [string]$Community,
         [string]$Snmpwalk = "C:\usr\bin\snmpwalk.exe" #path to snmpwalk.exe
 	
     )	
-    $cmd = "$snmpwalk -v1 -c$comunity -Ox $Ip 1.3.6.1.4.1.6296.101.3.13.1.1.3"
+    $cmd = "$snmpwalk -v1 -c$community -Ox $Ip 1.3.6.1.4.1.6296.101.3.13.1.1.3"
     $snmpResults = Invoke-Expression $cmd  #execute snmpwalk command
     Write-Verbose "$($SNMPResults | Out-String)"
     foreach ($single in $SNMPResults) {
