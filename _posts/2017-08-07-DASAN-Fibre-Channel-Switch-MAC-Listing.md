@@ -42,9 +42,11 @@ function Get-MACDasan {
     )	
     $cmd = "$snmpwalk -v1 -c$community -Ox $Ip 1.3.6.1.4.1.6296.101.3.13.1.1.3"
     $snmpResults = Invoke-Expression $cmd  #execute snmpwalk command
-    Write-Verbose "$($SNMPResults | Out-String)"
-    foreach ($single in $SNMPResults) {
-        if ($single -match ('3\.13\.1\.1\.3\.(?<VLAN>\d{1,3})\.(?<Port>\d{1,3}).*= Hex-STRING: (?<MAC>.*)')) {
+    Write-Verbose "$($snmpResults | Out-String)"
+    # regex for VLAN, PORT and MAC
+    $regex = '3\.13\.1\.1\.3\.(?<VLAN>\d{1,3})\.(?<Port>\d{1,3}).*= Hex-STRING: (?<MAC>.*)'
+    foreach ($single in $snmpResults) {
+        if ($single -match $regex) {
             New-Object PSCustomObject -Property @{
                 Source = $ip
                 VLAN   = $Matches.VLAN
