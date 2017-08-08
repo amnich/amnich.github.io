@@ -34,13 +34,15 @@ function Get-MACDasan {
     param(	
         [Parameter(Mandatory = $True)] 
         [ValidateScript({$_ -match [IPAddress]$_ })] 
-        [string]$Ip,
-        [Parameter(Mandatory = $True)] [ValidateNotNull()]
-        [string]$Community,
-        [string]$Snmpwalk = "C:\usr\bin\snmpwalk.exe" #path to snmpwalk.exe
+          [string]$Ip,
+        [Parameter(Mandatory = $True)]
+        [ValidateNotNull()]
+          [string]$Community,
+          [string]$Snmpwalk = "C:\usr\bin\snmpwalk.exe" #path to snmpwalk.exe
 	
-    )	
-    $cmd = "$snmpwalk -v1 -c$community -Ox $Ip 1.3.6.1.4.1.6296.101.3.13.1.1.3"
+    )
+    $Oid = '1.3.6.1.4.1.6296.101.3.13.1.1.3'
+    $cmd = "$snmpwalk -v1 -c$community -Ox $Ip $Oid"
     $snmpResults = Invoke-Expression $cmd  #execute snmpwalk command
     Write-Verbose "$($snmpResults | Out-String)"
     # regex for VLAN, PORT and MAC
