@@ -1,5 +1,5 @@
 ---
-title: "Add new script to NSClient++ for Nagios"
+title: "2017-08-08 Add new script to NSClient++ for Nagios"
 date: 2017-08-08
 tags: [PowerShell,Nagios,NSClient++]
 ---
