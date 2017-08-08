@@ -55,3 +55,5 @@ function Get-MACDasan {
     }
 }
 ```
+
+[GitHub source code](https://github.com/amnich/Get-MACDasan.ps1)
