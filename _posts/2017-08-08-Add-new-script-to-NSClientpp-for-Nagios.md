@@ -44,8 +44,8 @@ Function Add-NscWrappedScript {
             try {
                 if ($using:NscFolder) {
                     if ($using:VerboseSwitch){
-						$VerbosePreference = "continue"
-					}
+                      $VerbosePreference = "continue"
+                    }
                     Write-Verbose "Running remote on $env:computername"
                     $NscFolder = $using:NscFolder
                     $BackupIniFile = $using:BackupIniFile
