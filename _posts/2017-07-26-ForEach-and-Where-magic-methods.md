@@ -1,6 +1,12 @@
-http://www.powershellmagazine.com/2014/10/22/foreach-and-where-magic-methods/
+---
+title: "2017-07-26 ForEach and Where magic methods"
+date: 2017-07-26
+tags: [PowerShell,ForEach,Where]
+---
 
 A great article about foeach and where methods which where introduced in PowerShell 4.0 and in my opinion are not well known.
+
+http://www.powershellmagazine.com/2014/10/22/foreach-and-where-magic-methods/
  
  I encourage you to read it and take advantage of the improvements in performance, functionality and syntax ... or just read it and maybe get back to it when you have some performance issues.
  
