@@ -79,5 +79,5 @@ catch{
 	throw "Error: $($Error[0])"
 }
 ```
-This is how it looks like for the user. 
-![gif]({{ site.url }}/assets/images/20170810_XML.gif)
+This is how it looks like to the user. 
+![XML Validation]({{ site.url }}/assets/images/20170810_XML.gif)
