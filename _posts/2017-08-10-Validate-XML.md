@@ -9,6 +9,8 @@ I had a need to give a user a quick tool to validate a generated XML file based 
 For the first part I needed to validate a XML file against XSD schema and get back error messages with at least error message, line and position/column in file.
 
 That is covered with [Test-Xml](https://github.com/amnich/Search-XmlError/blob/master/Test-Xml.ps1) which returns error messages from validation.
+
+ It uses a System.Xml.XmlReader and ValidationEventHandler to capture the errors.
 ```
 PS > Test-Xml -XmlFile C:\my.xml -XsdFile C:\schema.xsd    
     SourceObject       :
