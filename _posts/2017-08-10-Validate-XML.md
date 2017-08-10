@@ -80,4 +80,4 @@ catch{
 }
 ```
 This is how it looks like for the user. 
-![gif]]({{ site.url }}/assets/images/20170810_XML.gif)
+![gif]({{ site.url }}/assets/images/20170810_XML.gif)
