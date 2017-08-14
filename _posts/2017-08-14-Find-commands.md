@@ -4,7 +4,7 @@ date: 2017-08-14
 tags: [PowerShell]
 ---
 
-# What and where?
+## What and where?
 I have over 200 scripts in my repository and in many of them I use functions from my custom module.
 The module grew with my Powershell experience.
 Many functions are not used anywhere, but which one?
@@ -15,7 +15,7 @@ To keep it more universal I created a function that finds a command usage in a s
 
 Thanks to Seemingly Science who provided a solution how to take advantage of the Parser and Abstract Syntax Tree from System.Management.Automation.Language.
 
-# Usage
+## Usage
 
 ```powershell
 PS > Get-CommandUsage -Command Get-ChildItem -Path C:\Scripts
@@ -40,5 +40,5 @@ ModuleImport : True
 
 ```
 
-#GitHub
+## GitHub
 Full script on [GitHub](https://github.com/amnich/Get-CommandUsage)
