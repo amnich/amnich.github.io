@@ -28,6 +28,7 @@ To keep it more universal I created a function that finds a command usage in a s
 		Path         : C:\Scripts\copy-items.ps1
 		CommandLine  : Get-ChildItem $path_out -Filter *.pdf -ErrorVariable +my_error
 		LineNumber   : 40
+    IsAlias      :
 ```
 #### Find usage of Get-ChildItem and its aliases in C:\Scripts\copy-items.ps1 script. Expands alias in returned results in Command property
 ```powershell
@@ -38,12 +39,14 @@ To keep it more universal I created a function that finds a command usage in a s
 		Path         : C:\Scripts\copy-items.ps1
 		CommandLine  : Get-ChildItem $path_out -Filter *.pdf -ErrorVariable +my_error
 		LineNumber   : 40
+    IsAlias      : False
 		
 		Command      : Get-ChildItem
 		Script       : copy-items.ps1
 		Path         : C:\Scripts\copy-items.ps1
 		CommandLine  : gci $path_in 
 		LineNumber   : 41	
+    IsAlias      : True
 ```
 #### Find all used commands from module SomeModule in scripts in current directory
 ```powershell
@@ -53,7 +56,8 @@ To keep it more universal I created a function that finds a command usage in a s
 		Script       : get-ServerInfo.ps1
 		Path         : C:\Scripts\get-ServerInfo.ps1
 		CommandLine  : Get-SQLDataTable -Query "SELECT ComputerName, Max(TimeCreated) as MaxDate from ServerLogs group by ComputerName"
-		LineNumber   : 50		
+		LineNumber   : 50	
+    IsAlias      :
 ```
 #### Find all commands in scripts in C:\Scripts
 ```powershell
@@ -65,6 +69,7 @@ To keep it more universal I created a function that finds a command usage in a s
 		Path         : C:\Scripts\copy-items.ps1
 		CommandLine  : Get-ChildItem $path_in 
 		LineNumber   : 4		
+    IsAlias      :
 ```
 ## GitHub
 Full script on [GitHub](https://github.com/amnich/Get-CommandUsage)
