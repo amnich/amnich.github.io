@@ -10,7 +10,7 @@ tags: [PowerShell,VIES]
 In my case however it was needed to automate the check, open the web site and print it.
 
 What I did was:
-* query results using the Invoke-WeRequest
+* query results using the Invoke-WebRequest
 * store the results in a temp file
 * replace the href and src references to http://ec.europa.eu to show the web page later on
 * open page in IE
@@ -21,7 +21,7 @@ The Invoke-WebRequest uses a POST method to http://ec.europa.eu/taxation_customs
 ```powershell
 $POST = "memberStateCode=$country&number=$vatnumber&action=check"
 ```
-
+## Source code
 Source code on [GitHub](https://github.com/amnich/Check-VAT_VIES)
 
 ## Example usage
