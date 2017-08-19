@@ -3,7 +3,7 @@ title: "2017-08-18 Check VAT number on VIES"
 date: 2017-08-18
 tags: [PowerShell,VIES]
 ---
-##### Edit: 2018.08.19 Added SOAP check as a more reliable way to get status
+##### Edit: 2018.08.19 Added SOAP check as a more reliable way to get status. NoPrint and CheckOnly switches
 # VIES
 [VIES](http://ec.europa.eu/taxation_customs/vies/) provides an SOAP API to automate the VAT number check. I use it also to get the response. 
 
@@ -95,6 +95,7 @@ if (-not $NoPrint){
 Source code on [GitHub](https://github.com/amnich/Check-VAT_VIES)
 
 ## Example usage
+Check TIN, show web page and print results
 ```powershell
 PS >  Check-VAT_VIES -TIN DE99999999999
 
@@ -102,3 +103,21 @@ Date                NIP           User     Result
 ----                ---           ----     ------
 2017-08-18 16:47:04 DE99999999999 user1    True
 ```
+Check TIN, show web page but don't print.
+```powershell
+PS >  Check-VAT_VIES -TIN DE99999999999 -NoPrint
+
+Date                NIP           User     Result
+----                ---           ----     ------
+2017-08-18 16:47:04 DE99999999999 user1    True
+```
+
+Check TIN only
+```powershell
+PS >  Check-VAT_VIES -TIN DE99999999999 -CheckOnly
+
+Date                NIP           User     Result
+----                ---           ----     ------
+2017-08-18 16:47:04 DE99999999999 user1    True
+```
+
