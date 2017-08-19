@@ -82,7 +82,7 @@ else{
 ```
 Finally automatic print
 ```powershell
-if (-not $NoPrint){
+if (-not $NoPrint -and -not $CheckOnly){
   try {
     $ie.execWB(6,2)
   }
