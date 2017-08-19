@@ -5,7 +5,7 @@ tags: [PowerShell,VIES]
 ---
 ##### Edit: 2018.08.19 Added SOAP check as a more reliable way to get status
 # VIES
-[VIES](http://ec.europa.eu/taxation_customs/vies/) provides an SOAP API to automate the VAT number check.
+[VIES](http://ec.europa.eu/taxation_customs/vies/) provides an SOAP API to automate the VAT number check. I use it also to get the response. 
 
 In my case however it was needed to automate the check, open the web site and print it.
 
