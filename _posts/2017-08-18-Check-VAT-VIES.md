@@ -3,7 +3,7 @@ title: "2017-08-18 Check VAT number on VIES"
 date: 2017-08-18
 tags: [PowerShell,VIES]
 ---
-
+##### Edit: 2018.08.19 Added SOAP check as a more reliable way to get status
 # VIES
 [VIES](http://ec.europa.eu/taxation_customs/vies/) provides an SOAP API to automate the VAT number check.
 
@@ -13,6 +13,7 @@ What I did was:
 * query results using the Invoke-WebRequest
 * store the results in a temp file
 * replace the href and src references to http://ec.europa.eu to show the web page later on
+* perform another request using SOAP service to get response status
 * open page in IE
 * create an object with results
 * print on default printer
@@ -29,6 +30,19 @@ Replace src and href code to display page correctly with pictures and links
 ```powershell
 $file = $file.replace('href="','href="http://ec.europa.eu') 
 $file = $file.replace('src="','src="http://ec.europa.eu')
+```
+Perform a SOAP service check using Invoke-WebRequest
+```powershell
+$xmlSoap = '<?xml version="1.0" encoding="UTF-8"?>
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ec.europa.eu:taxud:vies:services:checkVat:types">
+  <soapenv:Header/>
+  <soapenv:Body>
+      <urn:checkVat>
+          <urn:countryCode>{0}</urn:countryCode>
+          <urn:vatNumber>{1}</urn:vatNumber>
+      </urn:checkVat>
+  </soapenv:Body>' -f $country, $vatnumber
+$SoapResults = Invoke-WebRequest -Method Post -Uri $uriSoap -Body $xmlSoap
 ```
 Create new IE com object and navigate to page
 ```powershell
@@ -50,14 +64,20 @@ $obj = New-Object Pscustomobject -Property @{
 ```
 Check if VAT number was valid or not
 ```powershell
-if ($file -match ("Yes, valid VAT number")) { 
-  $obj.Result = $true			
-}
-elseif ($file -match ("No, invalid VAT number")) { 
-  $obj.Result = $false			
+#check if $SoapResults 
+if (($SoapResults -as [XML]).envelope.body.checkvatresponse.valid){
+  if ($file -match ("Yes, valid VAT number")) { 
+    $obj.Result = $true			
+  }
+  elseif ($file -match ("No, invalid VAT number")) { 
+    $obj.Result = $false			
+  }
+  else{
+    throw "Not expected results." 
+  }
 }
 else{
-  throw "Not expected results." 
+  $obj.Result = ($SoapResults -as [XML]).envelope.body.checkvatresponse.valid
 }
 ```
 Finally automatic print
