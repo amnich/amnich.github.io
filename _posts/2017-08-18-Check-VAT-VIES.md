@@ -57,7 +57,7 @@ Create output object with results
 ```powershell
 $obj = New-Object Pscustomobject -Property @{
 			Date = Get-Date
-			NIP = $TIN
+			TIN = $TIN
 			Result = $null
 			User = $env:Username
 }
