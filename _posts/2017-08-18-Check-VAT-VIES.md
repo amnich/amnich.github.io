@@ -99,7 +99,7 @@ Check TIN, show web page and print results.
 ```powershell
 PS >  Check-VAT_VIES -TIN DE99999999999 -CheckersTIN DE99999999999
 
-Date                NIP           User     Result
+Date                TIN           User     Result
 ----                ---           ----     ------
 2017-08-18 16:47:04 DE99999999999 user1    True
 ```
@@ -107,7 +107,7 @@ Check TIN, show web page but don't print.
 ```powershell
 PS >  Check-VAT_VIES -TIN DE99999999999 -NoPrint
 
-Date                NIP           User     Result
+Date                TIN           User     Result
 ----                ---           ----     ------
 2017-08-18 16:47:04 DE99999999999 user1    True
 ```
@@ -116,7 +116,7 @@ Check TIN only.
 ```powershell
 PS >  Check-VAT_VIES -TIN DE99999999999 -CheckOnly
 
-Date                NIP           User     Result
+Date                TIN           User     Result
 ----                ---           ----     ------
 2017-08-18 16:47:04 DE99999999999 user1    True
 ```
