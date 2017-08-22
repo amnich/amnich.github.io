@@ -21,11 +21,13 @@ $email_props = @{
 Then run the script – it will end with an error, but will load Resolve-Host function and set variables
 Then run 
 ```powershell
-PS > Resolve-Host -HostName HostNameToMonitor | Export-Csv -Path $hosts_csv_path -Encoding UTF8
+PS > Resolve-Host -HostName HostNameToMonitor | 
+      Export-Csv -Path $hosts_csv_path -Encoding UTF8
 ```
 Or to add another hostname to monitor
 ```powershell
-PS > Resolve-Host -HostName AnotherHostname | Export-Csv -Path $hosts_csv_path -Encoding UTF8 -Append
+PS > Resolve-Host -HostName AnotherHostname | 
+      Export-Csv -Path $hosts_csv_path -Encoding UTF8 -Append
 ```
 ### Run
 Now with the initial start you can schedule the script and wait for an email when an IP of a hostname changes.
@@ -83,7 +85,8 @@ In the end if something new was found an email is sent and results added to CSV.
 ```powershell
 if ($results) {
     Write-Verbose "Send mail with results"
-    Send-MailMessage @email_props  -Subject "Hostname IP change" -Body $(($results | ForEach-Object {"$($_.ip) $($_.hostname)"}) -join "`n")
+    Send-MailMessage @email_props  -Subject "Hostname IP change" -Body $(
+      ($results | ForEach-Object {"$($_.ip) $($_.hostname)"}) -join "`n")
     Write-Verbose "Export results"
     $results | Export-Csv -Append $hosts_csv_path -NoTypeInformation -Encoding utf8 -ErrorVariable +my_error
 }
