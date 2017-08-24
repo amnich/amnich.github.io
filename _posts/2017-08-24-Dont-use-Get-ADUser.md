@@ -171,3 +171,6 @@ The HashTable is not something for every use case but is worth to consider when 
 
 ### Source code
 Code on [pastebin](https://pastebin.com/amAFSG6j)
+
+## Join the Discussion
+[Reddit r/PowerShell](https://www.reddit.com/r/PowerShell/comments/6vtenn/dont_use_getaduser_every_time_or_maybe_use/)
