@@ -121,12 +121,12 @@ Time for 100 user queries.
 * Where method with first 1 on AD results - 2526 ms
 * Foreach on AD results - 2066 ms
 * Foreach with break on AD results - 1094 ms 
-* Where-Object on CSV results - **12571** ms
+* Where-Object on CSV results - **12571 ms**
 * Where method on CSV results - 2877 ms
-* Where-Object on JSON results - **12513** ms
+* Where-Object on JSON results - **12513 ms**
 * Foreach on JSON - 860 ms
-* Foreach with break on JSON - 463 ms
-* Where-Object on ArrayList - **12381** ms
+* **Foreach with break on JSON - 463 ms**
+* Where-Object on ArrayList - **12381 ms**
 * **HashTable - 7 ms**
 ## Summary
 Worst times on Where-Object. It was very slow. ~ 11827 ms
