@@ -111,6 +111,7 @@ for ($i=0;$i -lt 100;$i++){
 ```powershell
   $ADUsersHT["$user"]
 ```
+
 ### Results
 Average results from 10 runs each 100 users in a loop.
 
