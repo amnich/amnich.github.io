@@ -113,6 +113,7 @@ for ($i=0;$i -lt 100;$i++){
 ```
 
 ### Results
+
 Average results from 10 runs each 100 users in a loop. (Given time for 100 user queries)
 * **Normal Get-ADUser  - 800 ms**   
 * Where-Object on AD results - **9843 ms** 
@@ -127,7 +128,9 @@ Average results from 10 runs each 100 users in a loop. (Given time for 100 user 
 * **Foreach with break on JSON - 463 ms**
 * Where-Object on ArrayList - **12381 ms**
 * **HashTable - 7 ms**
+
 ## Summary
+
 Worst times on Where-Object. It was very slow. ~ 11827 ms
 ```powershell
   $ADUsers | Where samaccountname -EQ "$user"
