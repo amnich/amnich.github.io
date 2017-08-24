@@ -11,9 +11,12 @@ Putting the obvious greater AD load aside, how much slower is it?
 
 Let's test and compare.
 ## Prepare
+About 2000 user accounts in AD.
+
+Test scenarios:
 * Get-ADUser each time
 * Get-ADUsers to a variable and then work with that object
-* Convert local results to a hashtable, arraylist, to and from csv, to and from json  
+* Convert local results to a hashtable, arraylist, deserialize it with to and from csv, to and from json  
 
 ```powershell
 $ADUsers = Get-ADUser -Filter *               # AD Results 
@@ -27,7 +30,6 @@ foreach ($aduser in $ADUsers){
 $ADusersCSV = $ADUsers | ConvertTo-CSV | ConvertFrom-Csv   # CSV
 $ADUsersJSON = $AdusersCSV | ConvertTo-Json | ConvertFrom-Json # JSON
 ```
-About 2000 user accounts in AD.
 
 Get 100 random users from AD to be used on the loop
 ```powershell
