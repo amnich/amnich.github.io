@@ -1,5 +1,5 @@
 ---
-title: "2017-08-24 Don't use Get-ADUser every time! Or?"
+title: "2017-08-24 Don't use Get-ADUser every time! Or maybe do?"
 date: 2017-08-24
 tags: [PowerShell, AD]
 ---
