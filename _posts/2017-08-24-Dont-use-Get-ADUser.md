@@ -31,7 +31,7 @@ $ADusersCSV = $ADUsers | ConvertTo-CSV | ConvertFrom-Csv   # CSV
 $ADUsersJSON = $AdusersCSV | ConvertTo-Json | ConvertFrom-Json # JSON
 ```
 
-Get 100 random users from AD to be used on the loop
+Get 100 random users from AD to be used in the loop
 ```powershell
 $users = @()
 for ($i=0;$i -lt 100;$i++){
