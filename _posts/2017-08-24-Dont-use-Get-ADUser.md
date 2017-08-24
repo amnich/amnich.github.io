@@ -5,7 +5,7 @@ tags: [PowerShell, AD]
 ---
 
 When it comes to do some queries in the AD I often see that others advise 
-> "don't call Get-ADUser every time. Better get everything local and query against it."
+> "Don't call Get-ADUser every time. Better get everything local and query against it."
 
 Putting the obvious greater AD load aside, how much slower is it?
 Let's test and compare.
