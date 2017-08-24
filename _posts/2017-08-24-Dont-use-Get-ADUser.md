@@ -113,9 +113,7 @@ for ($i=0;$i -lt 100;$i++){
 ```
 
 ### Results
-Average results from 10 runs each 100 users in a loop.
-
-Time for 100 user queries.
+Average results from 10 runs each 100 users in a loop. (Given time for 100 user queries)
 * **Normal Get-ADUser  - 800 ms**   
 * Where-Object on AD results - **9843 ms** 
 * Where method on AD results - 4895 ms
