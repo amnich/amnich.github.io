@@ -42,7 +42,7 @@ for ($i=0;$i -lt 100;$i++){
 ### Get user from AD by sAMAccountName
   * Normal Get-ADUser 
   ```powershell
-    Get-AdUser $user
+    Get-ADUser $user
   ```
   * Where-Object on AD results
   ```powershell
@@ -167,7 +167,7 @@ Still 860 ms and 463 ms with break on deserialized objects.
 
 **Why not stick to get the user direct with Get-Aduser if the AD guys are not knocking at your door? It is fast ~ 800 ms.**
 ```powershell
-  Get-AdUser $user
+  Get-ADUser $user
 ```
 
 **But nothing beats a HashTable. It is super-fast - 7 ms. **
