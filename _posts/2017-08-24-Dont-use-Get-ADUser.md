@@ -135,7 +135,7 @@ Worst times on Where-Object. It was very slow. ~ 11827 ms
 ```powershell
   $ADUsers | Where samaccountname -EQ "$user"
 ```
-The where method was faster. ~ 3886 ms
+The Where method was faster. ~ 3886 ms
 ```powershell
   $ADUsersCSV.Where({$_.samaccountname -EQ "$user"})
 ```
@@ -167,7 +167,13 @@ Still 860 ms and 463 ms with break on deserialized objects.
 
 **Why not stick to get the user direct with Get-Aduser if the AD guys are not knocking at your door? It is fast ~ 800 ms.**
 
-But nothing beats a HashTable. It is super-fast. It was 66 times faster than the best from the rest and 1795 times faster than the worst result.
+##### But nothing beats a HashTable. It is super-fast - 7 ms. 
+
+It was 66 times faster than the best from the rest and 1795 times faster than the worst result.
+
+```powershell
+  $ADUsersHT["$user"]
+```
 
 The HashTable is not something for every use case but is worth to consider when you want to speed up things.
 
