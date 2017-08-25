@@ -180,6 +180,8 @@ It was 66 times faster than the best from the rest and 1795 times faster than th
 
 The HashTable is not something for every use case but is worth to consider when you want to speed up things.
 
+![Times]({{ site.url }}/assets/images/20170824_MethodTimes.png)
+
 ### Source code
 Code on [pastebin](https://pastebin.com/amAFSG6j)
 
