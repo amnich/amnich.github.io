@@ -7,7 +7,7 @@ tags: [PowerShell, AD]
 When it comes to do some queries in the AD I often see that others advise 
 > "Don't call Get-ADUser every time. Better get everything local and query against it."
 
-###### Edit: I meant doing it in a script in a loop or something like that, not the daily interactive work. That it is faster to work with a local object then do a Get-ADuser in a loop every time.
+###### Edit: I meant doing it in a script in a loop or something like that, not the daily interactive work. That it is faster to work with a local object then to do a Get-ADuser in a loop every time.
 
 Putting the obvious greater AD load aside, how much slower is it?
 
