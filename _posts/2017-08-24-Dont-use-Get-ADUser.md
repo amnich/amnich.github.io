@@ -57,7 +57,7 @@ for ($i=0;$i -lt 100;$i++){
   $ADUsersCSV.Where({$_.samaccountname -EQ $user},'First',1)
 ```
 * Foreach on AD results
-  ```powershell 
+```powershell 
   foreach ($aduser in $ADUsers){
     if ($aduser.samaccountname -eq $user){
       $aduser										
@@ -65,14 +65,14 @@ for ($i=0;$i -lt 100;$i++){
   }
 ```
 * Foreach with break on AD results
-  ```powershell 
+```powershell 
   foreach ($aduser in $ADUsers){
     if ($aduser.samaccountname -eq $user){
       $aduser					
       break
     }
   }
-  ```
+```
 * Where-Object on CSV results
 ```powershell
   $ADUsersCSV | Where-Object samaccountname -EQ $user
