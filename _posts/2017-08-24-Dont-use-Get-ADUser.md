@@ -170,7 +170,7 @@ Still 860 ms and 463 ms with break on deserialized objects.
   Get-ADUser $user
 ```
 
-**But nothing beats a HashTable. It is super-fast - 7 ms. **
+**But nothing beats a HashTable. It is super-fast - 7 ms.**
 
 It was 66 times faster than the best from the rest and 1795 times faster than the worst result.
 
