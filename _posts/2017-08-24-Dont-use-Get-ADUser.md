@@ -46,15 +46,15 @@ for ($i=0;$i -lt 100;$i++){
   ```
   * Where-Object on AD results
   ```powershell
-    $ADUsers | Where-Object samaccountname -EQ "$user"
+    $ADUsers | Where-Object samaccountname -EQ $user
   ```
 * Where method on AD results
 ```powershell
-  $ADUsers.Where({$_.samaccountname -EQ "$user"})
+  $ADUsers.Where({$_.samaccountname -EQ $user})
 ```
 * Where method with first 1 on AD results
 ```powershell
-  $ADUsersCSV.Where({$_.samaccountname -EQ "$user"},'First',1)
+  $ADUsersCSV.Where({$_.samaccountname -EQ $user},'First',1)
 ```
 * Foreach on AD results
   ```powershell 
@@ -75,16 +75,16 @@ for ($i=0;$i -lt 100;$i++){
   ```
 * Where-Object on CSV results
 ```powershell
-  $ADUsersCSV | Where-Object samaccountname -EQ "$user"
+  $ADUsersCSV | Where-Object samaccountname -EQ $user
 ```
 
 * Where method on CSV results
 ```powershell
-  $ADUsersCSV.Where({$_.samaccountname -EQ "$user"})
+  $ADUsersCSV.Where({$_.samaccountname -EQ $user})
 ```
 * Where-Object on JSON results
 ```powershell
-  $ADUsersJSON | Where samaccountname -EQ "$user"}
+  $ADUsersJSON | Where samaccountname -EQ $user}
 ```
 * Foreach on JSON
 ```powershell
@@ -105,11 +105,11 @@ for ($i=0;$i -lt 100;$i++){
 ```
 * Where-Object on ArrayList
 ```powershell
-  $ADusersArray | Where-Object samaccountname -EQ "$user"}
+  $ADusersArray | Where-Object samaccountname -EQ $user}
 ```
 * HashTable
 ```powershell
-  $ADUsersHT["$user"]
+  $ADUsersHT[$user]
 ```
 
 ### Results
@@ -133,15 +133,15 @@ Average results from 10 runs each 100 users in a loop. (Given time for 100 user 
 
 Worst times on Where-Object. It was very slow. ~ 11827 ms
 ```powershell
-  $ADUsers | Where samaccountname -EQ "$user"
+  $ADUsers | Where samaccountname -EQ $user
 ```
 The Where method was faster. ~ 3886 ms
 ```powershell
-  $ADUsersCSV.Where({$_.samaccountname -EQ "$user"})
+  $ADUsersCSV.Where({$_.samaccountname -EQ $user})
 ```
 It got better with First option. ~ 1948 ms
 ```powershell
-  $ADUsersCSV.Where({$_.samaccountname -EQ "$user"},'First',1)
+  $ADUsersCSV.Where({$_.samaccountname -EQ $user},'First',1)
 ```
 Foreach, with break if applicable, is the right way to deal with objects if you already burned them in memory. **1094 ms**
 ```powershell
@@ -166,8 +166,11 @@ If a deserialized object is something you can live with then it gets a tick fast
 Still 860 ms and 463 ms with break on deserialized objects. 
 
 **Why not stick to get the user direct with Get-Aduser if the AD guys are not knocking at your door? It is fast ~ 800 ms.**
+```powershell
+  Get-AdUser $user
+```
 
-##### But nothing beats a HashTable. It is super-fast - 7 ms. 
+**But nothing beats a HashTable. It is super-fast - 7 ms. **
 
 It was 66 times faster than the best from the rest and 1795 times faster than the worst result.
 
