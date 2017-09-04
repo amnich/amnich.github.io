@@ -30,6 +30,8 @@ If you have PSReadLine then you could also type MY- and use CTRL+SPACE to list a
   MY-open-ImportantExcelFile    MY-update-ModuleManifest 
 ```
 
+![Prefix]({{ site.url }}/assets/images/profileFunctions01.gif)
+
 ## Create a menu
 Another approach would be to create a MENU function in your profile that would list all functions and enable quick execution.
 
@@ -87,6 +89,7 @@ In the end prompt for input which function to run and execute
 
 When we put our function MENU into our profile we can test it
 
+![Menu]({{ site.url }}/assets/images/profileFunctions02.gif)
 
 ### Source code
 Code on [GitHubGist](https://gist.github.com/amnich/5099c5e472150da1d09f5ceb1142765a)
