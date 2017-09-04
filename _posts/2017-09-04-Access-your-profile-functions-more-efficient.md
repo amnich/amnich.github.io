@@ -34,7 +34,7 @@ MY-open-ImportantExcelFile    MY-update-ModuleManifest
 Another approach would be to create a MENU function in your profile that would list all functions and enable quick execution.
 
 ```powershell
-Function menu($functionName)
+Function menu($functionName) { ......
 ```
 The functionName will be used as an optional filter to narrow the list.
 
