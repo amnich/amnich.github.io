@@ -5,10 +5,12 @@ tags: [PowerShell]
 ---
 
 I have in my PowerShell profile a couple of functions that I use from time to time to update something automatically or to open a file quickly.
-But I use them not daily so I forget what I got there or what was the name of that function that I am looking for.
+
+Some of them are not used too often. I forget what I got there in the first place or what was the name of that function that I want to use right now.
 
 ## Prefix functions
-One option would be to use the same naming concept for all of them so you can find them better.
+One option would be to use the same naming concept for all functions inside our profile to find them better.
+
 For example prefix all with 'MY-'
 
 ```powershell
@@ -17,7 +19,7 @@ function MY-open-ImportantExcelFile {...}
 function MY-update-ModuleManifest {...}
 ```
 
-Then you can just type MY- and tab your way thru the functions.
+Then you could just type MY- and tab your way thru the functions.
 
 ```powershell
   PS > MY- [TAB]
@@ -33,14 +35,14 @@ If you have PSReadLine then you could also type MY- and use CTRL+SPACE to list a
 ![Prefix]({{ site.url }}/assets/images/profileFunctions01.gif)
 
 ## Create a menu
-Another approach would be to create a MENU function in your profile that would list all functions and enable quick execution.
+Another approach would be to create a MENU function in our profile that would list all functions and enable quick execution.
 
 ```powershell
 Function menu($functionName) { ......
 ```
-The functionName will be used as an optional filter to narrow the list.
+The $functionName will be used as an optional filter to narrow the list.
 
-Using the PowerShell's Abstract Syntax Tree I can load my profile file and extract all function definitions.
+Using the PowerShell's Abstract Syntax Tree we can load our profile file and extract all function definitions.
 {% raw %}
 ```powershell
 # Parse profile file using Language Parser
