@@ -39,6 +39,7 @@ Function menu($functionName)
 The functionName will be used as an optional filter to narrow the list.
 
 Using the PowerShell's Abstract Syntax Tree I can load my profile file and extract all function definitions.
+{% raw %}
 ```powershell
 # Parse profile file using Language Parser
   $AST = [System.Management.Automation.Language.Parser]::ParseFile(
@@ -53,9 +54,7 @@ Using the PowerShell's Abstract Syntax Tree I can load my profile file and extra
   $functions = @($AST.FindAll({
 	    	$args[0] -is [System.Management.Automation.Language.FunctionDefinitionAst]}
 	    	, $true) | ForEach-Object {
-{% raw %}
 	    		if ($_.Extent.Text -match '^\s{0,}function ([\w|\-]*)\s{0,}{{0,1}'){
-{% endraw %}
 					$Matches[1].trim() }
 			} | Where-Object {$_ -ne "menu" -and $_ -like "*$functionName*"} | Sort-Object)
 ```
@@ -68,7 +67,7 @@ Then display the list as a menu with numbers
   # [00]    open-ImportantExcelFile
   # [01]    update-ModuleManifest
 ```
-
+{% endraw %}
 In the end prompt for input which function to run and execute
 ```powershell
   if ($functions.count -gt 0){
