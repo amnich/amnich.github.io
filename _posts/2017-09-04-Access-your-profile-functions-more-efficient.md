@@ -30,8 +30,6 @@ PS > MY- [CTRL+SPACE]
 MY-open-ImportantExcelFile    MY-update-ModuleManifest 
 ```
 
-![Prefix]({{ site.url }}/assets/images/profileFunctions01.gif)
-
 ### Create a menu
 Another approach would be to create a MENU function in your profile that would list all functions and enable quick execution.
 
@@ -42,7 +40,7 @@ The functionName will be used as an optional filter to narrow the list.
 
 Using the PowerShell's Abstract Syntax Tree I can load my profile file and extract all function definitions.
 ```powershell
-#Parse profile file using Language Parser
+# Parse profile file using Language Parser
   $AST = [System.Management.Automation.Language.Parser]::ParseFile(
 	    $profile,
 	    [ref]$null,
@@ -59,8 +57,6 @@ Using the PowerShell's Abstract Syntax Tree I can load my profile file and extra
 					$Matches[1].trim() }
 			} | Where-Object {$_ -ne "menu" -and $_ -like "*$functionName*"} | Sort-Object)
 ```
-
-
 Then display the list as a menu with numbers
 
 ```powershell
@@ -90,7 +86,6 @@ In the end prompt for input which function to run and execute
 
 When we put our function MENU into our profile we can test it
 
-![Menu]({{ site.url }}/assets/images/profileFunctions02.gif)
 
 ### Source code
 Code on [GitHubGist](https://gist.github.com/amnich/5099c5e472150da1d09f5ceb1142765a)
