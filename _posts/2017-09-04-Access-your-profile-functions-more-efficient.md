@@ -53,7 +53,9 @@ Using the PowerShell's Abstract Syntax Tree I can load my profile file and extra
   $functions = @($AST.FindAll({
 	    	$args[0] -is [System.Management.Automation.Language.FunctionDefinitionAst]}
 	    	, $true) | ForEach-Object {
+{% raw %}
 	    		if ($_.Extent.Text -match '^\s{0,}function ([\w|\-]*)\s{0,}{{0,1}'){
+{% endraw %}
 					$Matches[1].trim() }
 			} | Where-Object {$_ -ne "menu" -and $_ -like "*$functionName*"} | Sort-Object)
 ```
