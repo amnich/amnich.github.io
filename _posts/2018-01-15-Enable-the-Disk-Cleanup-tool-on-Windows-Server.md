@@ -121,5 +121,5 @@ Once the files are there just run the disk cleanup tool with Cleanmgr.exe
 
 Original info how to enable it found on [this site.](https://support.appliedi.net/kb/a110/how-to-enable-the-disk-cleanup-tool-on-windows-server-2008-r2.aspx)
 
-
+DISCLAIMER: THIS IS NOT AN OFFICIAL MICROSOFT SOLUTION. USE AT YOUR OWN RISK.
 
