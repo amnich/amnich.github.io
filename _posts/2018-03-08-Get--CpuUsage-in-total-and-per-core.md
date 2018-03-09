@@ -8,7 +8,7 @@ tags: [PowerShell]
 
 A simple function Get-CpuUsage that allows to get CPU usage over a period of time.
 
-```PowerShell
+```powershell
 PS C:\> Get-CpuUsage -SampleInterval 2 -MaxSamples 5 -PerCore
 
 ComputerName Name   Average
@@ -129,7 +129,7 @@ Then I create a new format.ps1xml (My.CpuUsage.format.ps1xml) file and define th
 ```
 
 To import the format use `Update-FormatData` like:
-```Powershell
+```powershell
 PS > Update-FormatData -AppendPath .\My.CpuUsage.format.ps1xml`
 ```
 
@@ -163,7 +163,7 @@ It's possible to get the core usage with counters like for the total. There's mo
 
 ## Usage examples
 
-```PowerShell
+```powershell
 PS C:\> Get-CpuUsage -ComputerName COMPUTER2 -SampleInterval 1 -MaxSamples 5
 
 ComputerName Name   Average
@@ -171,7 +171,7 @@ ComputerName Name   Average
 COMPUTER2    _Total 23,23
 ```
 
-```PowerShell
+```powershell
 PS C:\> $results = Get-CpuUsage -ComputerName COMPUTER2 -SampleInterval 1 -MaxSamples 5
 PS C:\> $results.SingleReadings
 
@@ -184,7 +184,7 @@ TimeStamp                Cookedvalue Name
 2018-03-07 13:12:07 33,6261072727046 _Total
 ```
 
-```PowerShell
+```powershell
 PS C:\> Get-CpuUsage -SampleInterval 2 -MaxSamples 5 -PerCore
 
 ComputerName Name   Average
