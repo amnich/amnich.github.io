@@ -18,7 +18,7 @@ COMPUTER1    0      9,6
 COMPUTER1    1      8,6    
 COMPUTER1    2      12,2   
 COMPUTER1    3      21    
- ```
+```
 
 Full code on [GitHub](https://github.com/amnich/Get-CpuUsage)
 
