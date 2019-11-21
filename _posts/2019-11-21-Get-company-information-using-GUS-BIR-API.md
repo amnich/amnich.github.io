@@ -1,7 +1,7 @@
 ---
 title: "2019-11-21 Get company information using GUS BIR API"
 date: 2019-11-21
-tags: [PowerShell] [GUS] [BIR] [API] [SOAP]
+tags: [PowerShell, GUS, BIR, API, SOAP]
 ---
 
 ## INTRO
