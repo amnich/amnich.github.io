@@ -7,8 +7,11 @@ tags: [PowerShell] [GUS] [BIR] [API] [SOAP]
 ## INTRO
 
 A function to get company data by Vat Registration Number (NIP) from Polish GUS BIR API (https://api.stat.gov.pl/)
+
 Created for BIR version 1.1.
+
 Used actions: Zaloguj, Wyloguj, DaneSzukajPodmioty
+
 Url of API: https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
 
 More information about the API on https://api.stat.gov.pl/
@@ -37,6 +40,7 @@ DataZakonczeniaDzialalnosci :
 Full code on [GitHub](https://github.com/amnich/GUS-BIR-API-powershell-function)
 
 ### PARAMETER VATNumber
+
     Polish Vat Registration Number. 
     All non-digit characters are removed
         Example: PL123-45-67-890 => 1234567890
@@ -135,5 +139,6 @@ Typ                         : P
 SilosID                     : 6
 DataZakonczeniaDzialalnosci : 
 MiejscowoscPoczty           : Warszawa
-####LINK
+```
+#### LINK
     https://api.stat.gov.pl/Home/RegonApi
