@@ -4,13 +4,13 @@ date: 2019-11-21
 tags: [PowerShell, GUS, BIR, API, SOAP]
 ---
 
-Powershell function to get company data by Vat Registration Number (NIP) from Polish GUS BIR API (https://api.stat.gov.pl/)
+Powershell function to get company data by Vat Registration Number (NIP) from Polish GUS BIR API ([https://api.stat.gov.pl/](https://api.stat.gov.pl/))
 
 Created for BIR version 1.1.
 
 Used actions: Zaloguj, Wyloguj, DaneSzukajPodmioty
 
-Url of API: https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+Url of API: [https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc](https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc)
 
 You need to register to get your API key.
 
@@ -49,6 +49,7 @@ Full code on [GitHub](https://github.com/amnich/GUS-BIR-API-powershell-function)
 #### PARAMETER Key
 
   API Key.
+  
   To get an API key you need to register -> https://api.stat.gov.pl/Home/RegonApi#menu2
     
 #### PARAMETER TestMode
@@ -57,7 +58,7 @@ Full code on [GitHub](https://github.com/amnich/GUS-BIR-API-powershell-function)
 
 #### PARAMETER DelayBetweenRequests
 
-  Delay between requests in ms. Current limitations of API
+  Delay between requests in ms. 
   Info about current limitation in requests -> https://api.stat.gov.pl/Home/RegonApi#menu3
     
 #### EXAMPLE 1
