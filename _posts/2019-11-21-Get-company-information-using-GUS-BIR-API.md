@@ -39,27 +39,30 @@ Full code on [GitHub](https://github.com/amnich/GUS-BIR-API-powershell-function)
 
 #### PARAMETER VATNumber
 
-    Polish Vat Registration Number. 
-    All non-digit characters are removed
-        Example: PL123-45-67-890 => 1234567890
-    Can be a single number or an array of number
-        Example: $Vat = 1234567890, 2345678901
-        Get-BIRCompanyData -VATNumber $Vat -TestMode
-        (returns two records)
+  Polish Vat Registration Number. 
+  All non-digit characters are removed
+      Example: PL123-45-67-890 => 1234567890
+  Can be a single number or an array of number
+      Example: $Vat = 1234567890, 2345678901
+      Get-BIRCompanyData -VATNumber $Vat -TestMode
+      (returns two records)
 
 #### PARAMETER Key
-    API Key.
-    To get an API key you need to register -> https://api.stat.gov.pl/Home/RegonApi#menu2
+
+  API Key.
+  To get an API key you need to register -> https://api.stat.gov.pl/Home/RegonApi#menu2
     
 #### PARAMETER TestMode
-    Runs query in test mode using URL https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc and test API key
+
+  Runs query in test mode using URL https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc and test API key
 
 #### PARAMETER DelayBetweenRequests
-    Delay between requests in ms. Current limitations of API
-    Info about current limitation in requests -> https://api.stat.gov.pl/Home/RegonApi#menu3
+
+  Delay between requests in ms. Current limitations of API
+  Info about current limitation in requests -> https://api.stat.gov.pl/Home/RegonApi#menu3
     
 #### EXAMPLE 1
-  Runs query in test mode  
+Runs query in test mode  
 ```powershell
 PS C:\> Get-BIRCompanyData -VATNumber 5270103391 -TestMode
 
