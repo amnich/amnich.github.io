@@ -13,6 +13,7 @@ Used actions: Zaloguj, Wyloguj, DaneSzukajPodmioty
 Url of API: https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
 
 More information about the API on https://api.stat.gov.pl/
+
 You need to register to get your API key.
 
 ```powershell
