@@ -37,7 +37,7 @@ DataZakonczeniaDzialalnosci :
 
 Full code on [GitHub](https://github.com/amnich/GUS-BIR-API-powershell-function)
 
-### PARAMETER VATNumber
+#### PARAMETER VATNumber
 
     Polish Vat Registration Number. 
     All non-digit characters are removed
@@ -57,7 +57,8 @@ Full code on [GitHub](https://github.com/amnich/GUS-BIR-API-powershell-function)
 #### PARAMETER DelayBetweenRequests
     Delay between requests in ms. Current limitations of API
     Info about current limitation in requests -> https://api.stat.gov.pl/Home/RegonApi#menu3
-#### EXAMPLE
+    
+#### EXAMPLE 1
   Runs query in test mode  
 ```powershell
 PS C:\> Get-BIRCompanyData -VATNumber 5270103391 -TestMode
@@ -80,7 +81,7 @@ DataZakonczeniaDzialalnosci :
 MiejscowoscPoczty           : Warszawa
 ```
    
-#### EXAMPLE    
+#### EXAMPLE 2
 ```powershell
 PS C:\> Get-BIRCompanyData -VATNumber 5270103391 -Key 'YourPrivateKey'
 
@@ -100,7 +101,7 @@ Typ                         : P
 SilosID                     : 6
 DataZakonczeniaDzialalnosci :   
 ```
-#### EXAMPLE   
+#### EXAMPLE 3
 ```powershell
 PS C:\> Get-BIRCompanyData -VATNumber 5270103391, 525-23-44-078 -TestMode
 
